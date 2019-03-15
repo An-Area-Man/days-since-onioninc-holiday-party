@@ -3,10 +3,59 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>TheOnionHoliday.party</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel="shortcut icon" href="/favicon.png">
+    <style>
+        body{
+            background-color:#006B3A;
+            font-family: "ElizabethSerif",Georgia,serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            height: 100vh;
+            color: #FFF;
+            flex-wrap: wrap;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        h1 {
+            max-width: 80vw;
+            text-align: center;
+            margin-bottom: 0;
+            font-size: 6vw;
+        }
+        h1 span {
+            font-size: 1.25em;
+        }
+        svg {
+            max-width: 50vw;            
+            max-height: 50vh;
+            height:  auto;
+            width:  100%;
+        }
+        @media (min-width: 980px) {
+            h1 { font-size: 3rem }
+        }
+
+    </style>
 </head>
 <body>
-    Howdy    
+     <h1 id="whereTheWordsGo"></h1>
+
+    <svg id="theonion-avatar-svgid" width="100%" height="100%" viewBox="0 0 64 64"><path fill="#006B3A" d="M0 0h64v64H0z"></path><path fill="#FFF" d="M29.455 41.814c2.778.484 11.656-1.575 14.674-12.186 3.083-10.912 1.51-8.73-7.424.547-4.832 5.033-8.637 11.397-7.25 11.639zm7.792 6.912c9.657-3.456 9.538-16.064 7.969-12.55-1.572 3.455-2.598 6.246-5.978 8.184-2.66 1.515-4.53 1.697-7.792 1.638-2.72-.06-5.197-2.304-5.982 1.092-.844 3.754 8.218 2.906 11.776 1.633l.007.003zm-8.153-16.368c7.43-10.309 18.48-14.003 17.211-15.28-1.51-1.516-8.153.546-8.153.546C27.825 21.26 16.594 28.05 15.867 36.538c-.24 2.483.484 7.155 3.625 9.093 2.172 1.335 5.917-8.185 9.602-13.274v.001zm-7.247-9.095c4.105-3.034 12.02-5.517 10.325-5.456-5.735.18-17.39 4.91-17.936 12.186-.182 2.304 3.504-3.7 7.611-6.73zM11.699 50.665c-.663-.966 1.994-1.514 2.478-2.605 2.417-4.608-1.874-2.729-3.684-13.277-3.504-19.948 30.498-19.948 35.03-20.734 4.164-.73-.064-6.246 3.198-6.246 1.088 0 0 2.85 1.088 3.274 1.147.487 1.81-2.607 2.959-1.638 1.57 1.335-1.51 2.547-.663 3.396.602.606 2.053-.544 2.534.243.845 1.272-1.449 2.12-3.503 2.483-7.488 1.276 8.576 34.138-17.51 38.682-6.887 1.273-10.09-4.788-15.222-1.82-1.27.729-2.174 3.517-2.96 2.367-.482-.73.786-1.881 0-2.368-.542-.3-1.327 1.035-1.872.548-.423-.422.183-1.092-.24-1.636-.363-.545-1.21-.058-1.633-.669z"></path></svg>
+
+    <script>
+        const whereTheWordsGo = document.getElementById('whereTheWordsGo')
+        const today = new Date();
+        const lastHolidayParty = new Date('2/9/2018');
+        const daysBetween = Math.round( (today.getTime() - lastHolidayParty.getTime()) / 8.64e7)
+        
+        let pronouncement = `
+            It has been <span>${daysBetween}</span> day${daysBetween>1?'s':''} since the last Onion Inc. holiday party.  
+        `
+        whereTheWordsGo.innerHTML = pronouncement
+    </script>
 </body>
 </html>
